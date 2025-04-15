@@ -1,0 +1,43 @@
+.appContainer {
+  display: flex; /* Enable Flexbox for the container */
+  min-height: 100vh;
+}
+
+.leftSection {
+  flex: 1; /* Allow the left section to grow and take up available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.logo {
+  margin-bottom: 30px;
+  height: 40px;
+}
+
+.rightSection {
+  flex: 1; /* Allow the right section to grow and take up available space */
+  background-color: #EDE7F6; /* Example light purple background */
+  background-image: url('./assets/images/the.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+}
+
+/* For smaller screens, you might want to revert to stacking */
+@media (max-width: 768px) {
+  .appContainer {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+  }
+
+  .leftSection,
+  .rightSection {
+    flex: none; /* Prevent them from trying to take equal width */
+    width: 100%;
+  }
+
+  .rightSection {
+    min-height: 300px; /* Ensure some height for the illustration */
+  }
+}
